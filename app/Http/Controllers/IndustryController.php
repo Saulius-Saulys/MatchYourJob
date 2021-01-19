@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\IndustryStoreRequest;
 use App\Models\Industry;
 
 class IndustryController extends Controller
@@ -17,12 +17,37 @@ class IndustryController extends Controller
         return $industry;
     }
 
-    public function store(Request $request): Industry
+    public function store(IndustryStoreRequest $request): Industry
     {
+        $validated = $request->validated();
+        $industry = (new Industry(
+            [
+                'category' => $validated['category'],
+                'name' => $validated['name'],
+            ]
+        ));
+        $industry->save();
+
+        return $industry;
+    }
+
+    public function update(Industry $industry, IndustryStoreRequest $request): Industry
+    {
+        $validated = $request->validated();
+
+        if ($validated['category'] !== null) {
+            $industry->category = $validated['category'];
+        }
+        if ($validated['name'] !== null) {
+            $industry->name = $validated['name'];
+        }
+
+        $industry->save();
+
         return new Industry(
             [
-                'category' => $request->input('category'),
-                'name' => $request->input('name'),
+                'category' => $validated['category'],
+                'name' => $validated['name'],
             ]
         );
     }

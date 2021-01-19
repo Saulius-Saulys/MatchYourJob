@@ -13,7 +13,7 @@ class CreateIndustryTable extends Migration
      */
     public function up()
     {
-        Schema::create('industry', function (Blueprint $table) {
+        Schema::create('industries', function (Blueprint $table) {
             $table->id();
             $table->string('category');
             $table->string('name');
@@ -28,6 +28,6 @@ class CreateIndustryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('industry');
+        Schema::dropIfExists('industries');
     }
 }
