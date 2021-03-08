@@ -14,6 +14,7 @@ class Offer extends Model
         'industry_id',
         'description',
         'employment_type',
+        'title',
         'salary_from',
         'salary_to',
     ];

@@ -16,6 +16,7 @@ class CreateOfferTable extends Migration
             $table->foreign('industry_id')->references('id')->on('industries');
             $table->string('description');
             $table->string('employment_type')->nullable();
+            $table->string('title');
             $table->float('salary_from');
             $table->float('salary_to');
             $table->timestamps();

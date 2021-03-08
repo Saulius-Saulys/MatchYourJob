@@ -7,8 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Industry extends Model
 {
-    protected string $table = 'industry';
-
     protected array $fillable = [
         'category',
         'name'
