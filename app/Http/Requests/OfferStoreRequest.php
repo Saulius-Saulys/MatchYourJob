@@ -12,7 +12,7 @@ class OfferStoreRequest extends FormRequest
             'user_id' => 'required|int',
             'industry_id' => 'required|int',
             'description' => 'required|max:500|string',
-            'employment_type' => 'required|max:50|string|in:full,part',
+            'employment_type' => 'required|max:50|string|in:full,part, Full time',
             'title' => 'required|max:250|string',
             'salary_from' => 'required|numeric',
             'salary_to' => 'required|numeric',

@@ -9,7 +9,7 @@ class Education extends Model
 {
     use HasFactory;
 
-    protected array $fillable = [
+    protected $fillable = [
         'user_id',
         'university_title',
         'name',

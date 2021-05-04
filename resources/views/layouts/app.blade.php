@@ -15,17 +15,8 @@
     </header>
 </div>
 <head>
-
     <title>App Name - @yield('title')</title>
-    <div class="container">
 
-    <div class="px-4 py-5 my-5 text-center">
-        <h1 class="display-5 fw-bold">Admin panel</h1>
-        <p class="lead mb-4">Welcome to MatchYourJob admin panel, here you can make adjustments wth industries, edit users and etc.</p>
-            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        </div>
-    </div>
-    </div>
     <!-- Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css"
           rel="stylesheet">
@@ -37,6 +28,19 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
             integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous">
     </script>
+
+    <style>
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #9C27B0;
+            color: white;
+            text-align: center;
+        }
+
+    </style>
 
 </head>
 

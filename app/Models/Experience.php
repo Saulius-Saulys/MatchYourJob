@@ -7,9 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Experience extends Model
 {
+    protected $table = 'experience';
+
     use HasFactory;
 
-    protected array $fillable = [
+    protected $fillable = [
         'user_id',
         'company_title',
         'name',

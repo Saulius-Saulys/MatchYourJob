@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use PharIo\Manifest\Url;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,10 +15,12 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         if ($this->app->isLocal()) {
-            $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
+            $this->app->register('Barryvdh\Debugbar\ServiceProvider');
+        } else {
+//else register your services you require for production
+            $this->app['request']->server->set('HTTPS', true);
         }
     }
-
     /**
      * Bootstrap any application services.
      *
@@ -25,6 +28,5 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
     }
 }

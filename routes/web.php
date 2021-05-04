@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\EmploymentTypeController;
+use App\Http\Controllers\IndustryController;
+use App\Http\Controllers\UsersController;
+use Illuminate\Routing\UrlGenerator;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +20,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/test', function () {
+    return 'dsadas';
+});
+resolve(UrlGenerator::class)->forceScheme('https');
+Route::resource('industry', IndustryController::class);
+Route::resource('users', UsersController::class);
+Route::resource('employment_type', EmploymentTypeController::class);
